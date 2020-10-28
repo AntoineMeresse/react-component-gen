@@ -24,8 +24,11 @@ def createComponent(componentName : str):
 
 
 def main(args):
-    check_if_component_direct_exist()
-    createComponent(args[1])
+    if len(args)>1:
+        check_if_component_direct_exist()
+        createComponent(args[1])
+    else:
+        print("Give a component name as arg")
 
 if __name__ == "__main__":
     main(sys.argv)
