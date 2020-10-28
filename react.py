@@ -1,4 +1,5 @@
 import os
+import sys
 
 def check_if_component_direct_exist():
     if not os.path.exists('components'):
@@ -22,9 +23,9 @@ def createComponent(componentName : str):
         compCSS.write("."+cLower+" {\n\n}")  
 
 
-def main():
+def main(args):
     check_if_component_direct_exist()
-    createComponent("test")
+    createComponent(args[1])
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv)
